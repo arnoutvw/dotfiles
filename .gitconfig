@@ -1,10 +1,3 @@
-[user]
-  name = Jeff Geerling
-  email = geerlingguy@mac.com
-[core]
-  editor = vi
-  excludesfile = ~/.gitignore
-  autocrlf = input
 [color]
   branch = auto
   diff = auto
@@ -31,4 +24,4 @@
   dc = diff --cached
   l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
 [pull]
-	rebase = true
+  rebase = true
