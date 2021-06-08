@@ -130,3 +130,4 @@ export COMPOSER_MEMORY_LIMIT=-1
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
+export SDKMAN_OFFLINE_MODE=false
