@@ -59,6 +59,9 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
+#Timemaching disable ask for backup
+defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "true"
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
@@ -176,6 +179,9 @@ defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Set dock to the left
 defaults write com.apple.dock "orientation" -string "left"
+
+# Do not show recents
+defaults write com.apple.dock "show-recents" -bool "false"
 
 # Hot corners
 # Possible values:
