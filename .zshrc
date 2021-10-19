@@ -1,25 +1,28 @@
 #
 # .zshrc
 #
-# @author Jeff Geerling
+# @author Arnout van Westen
 #
 
-# Colors.
-unset LSCOLORS
-export CLICOLOR=1
-export CLICOLOR_FORCE=1
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/arnout/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="agnoster"
 
 # Don't require escaping globbing characters in zsh.
 unsetopt nomatch
 
-# Nicer prompt.
-export PS1=$'\n'"%F{green} %*%F %3~ %F{white}"$'\n'"$ "
-
 # Enable plugins.
-plugins=(git mvn textmate cp docker npm vagrant brew kubectl history history-substring-search)
+plugins=(git mvn history brew textmate copydir copyfile docker httpie pip rsync sublime)
+
+source $ZSH/oh-my-zsh.sh
 
 # Custom $PATH with extra locations.
-export PATH=$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/go/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
+export PATH=$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME:$PATH
 
 # Bash-style time output.
 export TIMEFMT=$'\nreal\t%*E\nuser\t%*U\nsys\t%*S'
@@ -52,8 +55,6 @@ alias gp='git pull --rebase'
 alias gcam='git commit -am'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 
-# Completions.
-autoload -Uz compinit && compinit
 # Case insensitive.
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
@@ -105,26 +106,6 @@ knownrm() {
    sed -i '' "$1d" ~/.ssh/known_hosts
  fi
 }
-
-# Allow Composer to use almost as much RAM as Chrome.
-export COMPOSER_MEMORY_LIMIT=-1
-
-# Ask for confirmation when 'prod' is in a command string.
-#prod_command_trap () {
-#  if [[ $BASH_COMMAND == *prod* ]]
-#  then
-#    read -p "Are you sure you want to run this command on prod [Y/n]? " -n 1 -r
-#    if [[ $REPLY =~ ^[Yy]$ ]]
-#    then
-#      echo -e "\nRunning command \"$BASH_COMMAND\" \n"
-#    else
-#      echo -e "\nCommand was not run.\n"
-#      return 1
-#    fi
-#  fi
-#}
-#shopt -s extdebug
-#trap prod_command_trap DEBUG
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
