@@ -6,13 +6,13 @@
 [init]
   defaultBranch = main
 [web]
-  browser = google-chrome
+  browser = firefox
 [credential]
   helper = osxkeychain
 [push]
   default = simple
 [merge]
-  tool = kdiff3
+  tool = bcompare
 [difftool]
   prompt = false
 [alias]
