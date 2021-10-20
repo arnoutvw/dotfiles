@@ -86,6 +86,9 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Set use keyboard navigation to move focus between controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
